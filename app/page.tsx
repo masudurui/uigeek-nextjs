@@ -1,5 +1,7 @@
 "use client";
 
+import Image from 'next/image';
+
 interface Project {
   id: string;
   category: string;
@@ -7,9 +9,9 @@ interface Project {
   dotColor: string;
   title: string;
   description: string;
-  quote: string;
-  quoteAuthor: string;
-  quoteBorderColor: string;
+  quote?: string;
+  quoteAuthor?: string;
+  quoteBorderColor?: string;
   images: string[];
   imageAlts: string[];
 }
@@ -17,15 +19,14 @@ interface Project {
 const projects: Project[] = [
   {
     id: "ai-companion",
-    category: "App Development Tools — WIP",
+    category: "Native iOS App Development Tools",
     categoryColor: "text-emerald-400",
     dotColor: "bg-emerald-400",
-    title: "AI Companion For iOS App Development",
+    title: "AI Companion For iOS Native App Development",
     description:
       "An intelligent coding assistant designed for iOS developers, featuring natural language prompts, real-time code generation, and seamless Xcode integration.",
-    quote:
-      '"Huge kudos to both of you. Incredible work in helping Alfi get off the ground since day 1."',
-    quoteAuthor: "Jacob Hailton, Uigeek.ai",
+    quote: '"Huge kudos to both of you. Incredible work in helping Alfi get off the ground since day 1."',
+    quoteAuthor: "Jacob Hailton, BTCH",
     quoteBorderColor: "border-emerald-500/30",
     images: [
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782802987/Prompt01_fcihbv.png",
@@ -42,8 +43,7 @@ const projects: Project[] = [
     title: "Cura Patient Monitoring App",
     description:
       "A comprehensive mental health platform connecting patients with caregivers, tracking vital signs, and providing real-time health insights.",
-    quote:
-      '"Huge kudos to both of you. Incredible work in helping Alfi get off the ground since day 1."',
+    quote: '"Huge kudos to both of you. Incredible work in helping Alfi get off the ground since day 1."',
     quoteAuthor: "Jacob Hailton, Uigeek.ai",
     quoteBorderColor: "border-red-500/30",
     images: [
@@ -61,8 +61,7 @@ const projects: Project[] = [
     title: "Cura Vitals & Body Metrics",
     description:
       "Advanced health tracking interface for body temperature, blood pressure, and vital signs monitoring. Designed for clinical and home use with dark-mode optimized readability.",
-    quote:
-      '"Huge kudos to both of you. Incredible work in helping Alfi get off the ground since day 1."',
+    quote: '"Huge kudos to both of you. Incredible work in helping Alfi get off the ground since day 1."',
     quoteAuthor: "Jacob Hailton, Uigeek.ai",
     quoteBorderColor: "border-cyan-500/30",
     images: [
@@ -83,10 +82,6 @@ const projects: Project[] = [
     title: "Diamond ICQ Product Platform",
     description:
       "A luxury diamond e-commerce experience featuring detailed product pages, responsive design, and an elegant navigation system for high-value inventory.",
-    quote:
-      '"Huge kudos to both of you. Incredible work in helping Alfi get off the ground since day 1."',
-    quoteAuthor: "Jacob Hailton, Uigeek.ai",
-    quoteBorderColor: "border-amber-500/30",
     images: [
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782829571/Navigation_Bar_pvckgq.png",
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782829570/01_kd0grv.png",
@@ -105,10 +100,6 @@ const projects: Project[] = [
     title: "Customer Management Platform",
     description:
       "A comprehensive SaaS solution for SMBs to manage customer imports, file uploads, group organization, and search functionality with a clean, data-dense interface.",
-    quote:
-      '"Huge kudos to both of you. Incredible work in helping Alfi get off the ground since day 1."',
-    quoteAuthor: "Jacob Hailton, Uigeek.ai",
-    quoteBorderColor: "border-blue-500/30",
     images: [
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782830253/Table_qv2zar.png",
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782830227/Customer_Import_Dashboard_Design_ums9rb.png",
@@ -129,10 +120,6 @@ const projects: Project[] = [
     title: "Leafcare Wellness Platform",
     description:
       "A holistic mental health and wellness platform featuring mindfulness exercises, sleep tracking, mood monitoring, and social media integration for community support.",
-    quote:
-      '"Huge kudos to both of you. Incredible work in helping Alfi get off the ground since day 1."',
-    quoteAuthor: "Jacob Hailton, Uigeek.ai",
-    quoteBorderColor: "border-violet-500/30",
     images: [
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782837555/Tui_Travel_Landing_Page_Design_yydcm7.png",
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782837434/Instagram_post_-_3_nhzexz.png",
@@ -152,9 +139,9 @@ const clients = [
   "Monetta", "Restofriends", "Meal Plan", "Upworks",
 ];
 
-const pricingFeatures = [
+const basicFeatures = [
   "2-3 updates per week",
-  "Senior Designers (Previously at Meta, Netflix, Hubspot, Expas & Founding designer at 25+ startups)",
+  "Senior Designers (Previously at ShopHero, ByteDance, Monetta, Bizwise & Founding designer at 25+ startups)",
   "Private Slack Channel",
   "No contracts, Cancel Anytime",
   "No Meetings",
@@ -162,41 +149,50 @@ const pricingFeatures = [
   "Marketing Websites",
 ];
 
+const launchFeatures = [
+  "4-5 updates per week",
+  "Senior Designers (Previously at ShopHero, Bytedance, Monetta, Bizwise & Founding Designer at 25+ startups)",
+  "Private Slack Channel",
+  "No contracts, Cancel Anytime",
+  "Monthly 1 Launch Video",
+  "Senior Designers + expanded capacity",
+];
+
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="project-card group">
-      {/* Single images stacked vertically — no grid, no hover arrow */}
+    <article className="project-card group pb-8">
       <div className="space-y-4 mb-6">
         {project.images.map((src, idx) => (
           <div
             key={idx}
-            className="relative overflow-hidden rounded-2xl border border-white/5 image-border"
+            className="relative w-full overflow-hidden rounded-3xl md:rounded-2xl sm:rounded-xl border border-white/5 aspect-video"
           >
-            <img
+            <Image
               src={src}
               alt={project.imageAlts[idx]}
-              className="w-full project-image"
-              loading="lazy"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 800px"
+              priority={idx === 0 && project.id === "ai-companion"}
             />
           </div>
         ))}
       </div>
 
-      {/* Category Badge */}
       <div className={`flex items-center gap-2 ${project.categoryColor} text-sm font-medium mb-3`}>
         <span className={`w-1.5 h-1.5 rounded-full ${project.dotColor}`} />
         {project.category}
       </div>
 
-      {/* Title & Description */}
       <h3 className="text-xl md:text-2xl font-semibold mb-3 font-heading">{project.title}</h3>
       <p className="text-zinc-400 leading-relaxed mb-4 max-w-xl">{project.description}</p>
 
-      {/* Quote */}
-      <blockquote className={`border-l-2 ${project.quoteBorderColor} pl-4 text-zinc-300 italic`}>
-        {project.quote}
-        <footer className="text-sm text-zinc-500 mt-1 not-italic">— {project.quoteAuthor}</footer>
-      </blockquote>
+      {project.quote && project.quoteAuthor && (
+        <blockquote className={`border-l-2 ${project.quoteBorderColor} pl-4 text-zinc-300 italic`}>
+          {project.quote}
+          <footer className="text-sm text-zinc-500 mt-1 not-italic">— {project.quoteAuthor}</footer>
+        </blockquote>
+      )}
     </article>
   );
 }
@@ -204,39 +200,34 @@ function ProjectCard({ project }: { project: Project }) {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0c0c0e]">
-      {/* MAIN SPLIT LAYOUT */}
       <div className="max-w-[1600px] mx-auto grid md:grid-cols-[2fr_3fr]">
-        {/* STICKY LEFT SIDE */}
-        <aside className="md:sticky md:top-0 md:h-screen md:overflow-y-auto sticky-sidebar bg-[#0c0c0e] border-r border-white/5 p-6 md:p-8 lg:p-10 xl:p-14 flex flex-col">
-          {/* Logo */}
-          <div className="flex items-center gap-3 mb-12">
-            <div className="w-10 h-10 bg-white text-black rounded-2xl flex items-center justify-center text-xl font-bold tracking-tight">
+        {/* STICKY LEFT SIDE - NON-SCROLLABLE */}
+        <aside className="md:sticky md:top-0 md:h-screen bg-[#0c0c0e] border-r border-white/5 p-6 md:p-8 lg:p-10 xl:p-14 flex flex-col">
+          <a href="/" className="flex items-center gap-3 mb-12 group">
+            <div className="w-10 h-10 bg-white text-black rounded-3xl md:rounded-2xl sm:rounded-xl flex items-center justify-center text-xl font-bold tracking-tight transition-all group-hover:scale-105">
               U
             </div>
             <span className="font-semibold text-lg hidden sm:block">Uigeek</span>
-          </div>
+          </a>
 
-          {/* Headline */}
-          <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.05] tracking-tight mb-8 font-heading">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight mb-8 font-heading">
             Product design agency from the Internet. We design & build AI-first products for startups & enterprises.
           </h1>
 
-          {/* Description */}
-          <p className="text-zinc-400 mb-10 text-base md:text-lg leading-relaxed">
-            We are currently working with founders in AI Legal, AI Governance, Private Jet Fund, Weight Loss (GLP), AI Health, AI Aviation Intelligence, Longevity, AI Texting, AI for Distributors and Manufacturers, AI Dev.
+          <p className="text-zinc-500 mb-10 text-base md:text-small leading-relaxed">
+            Helping founders ship beautiful, high-converting AI products, fast. Ex-ShopHero & ByteDance designers delivering results with zero contracts. Currently partnering with builders in AI Native iOS App development, AI Health Longevity, AI Texting, and AI Dev.
           </p>
 
-          {/* CTA Button */}
+          {/* Smaller CTA */}
           <a
             href="https://cal.com/uigeek"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-3 bg-emerald-900/40 hover:bg-emerald-900/60 text-emerald-300 border border-emerald-500/20 hover:border-emerald-500/40 px-8 py-4 rounded-2xl font-medium w-fit transition-all duration-300 mb-4"
+            className="group inline-flex items-center justify-center gap-3 bg-emerald-600/40 hover:bg-emerald-600/60 text-white border border-zinc-500/20 hover:border-emerald-500/40 px-6 py-3 text-sm rounded-2xl font-medium w-fit transition-all duration-300 mb-4"
           >
-            Let&apos;s Talk <span className="text-emerald-500/60">→</span> 2 Spots Available
+            Let&apos;s Talk <span className="text-emerald-500/60">→</span> 1 Spot Available
           </a>
 
-          {/* Clients */}
           <div className="mt-auto pt-8 border-t border-white/5">
             <p className="text-xs text-zinc-500 uppercase tracking-widest mb-4">Previously worked with</p>
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-zinc-400">
@@ -248,60 +239,118 @@ export default function Home() {
               ))}
             </div>
           </div>
+
+          <div className="pt-6 border-t border-white/5 mt-6">
+            <p className="text-xs text-zinc-500 uppercase tracking-widest mb-3">Follow our work</p>
+            <div className="flex flex-wrap gap-4 text-sm">
+              <a href="https://x.com/sr_masudur" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">X</a>
+              <a href="https://www.linkedin.com/in/mdmasudur92/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
+              <a href="https://dribbble.com/Joy_7480" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">Dribbble</a>
+            </div>
+            <p className="text-[10px] text-zinc-600 mt-2">See recent work, client results & behind-the-scenes.</p>
+          </div>
         </aside>
 
-        {/* RIGHT SIDE - SCROLLABLE */}
-        <section className="bg-[#0c0c0e] p-6 md:p-8 lg:p-10 xl:p-14 space-y-28 pb-28">
-          {/* Projects */}
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+        {/* RIGHT SIDE - SCROLLABLE with wider/deeper patterns */}
+        <section className="bg-[#0c0c0e] p-6 md:p-8 lg:p-10 xl:p-14 relative">
+          {/* Wider & deeper Left pattern */}
+          <div 
+            className="hidden md:block absolute left-0 top-0 bottom-0 w-8 z-10 border-l border-l-zinc-500/30 bg-[repeating-linear-gradient(315deg,#e5e5e5_0,#e5e5e5_1px,transparent_0,transparent_50%)] bg-size-[12px_12px] opacity-15"
+            aria-hidden="true"
+          />
 
-          {/* PRICING SECTION */}
-          <div className="pt-12 border-t border-white/5">
-            <div className="max-w-md">
-              {/* Header */}
-              <h3 className="text-xl font-semibold text-white mb-2">Basic</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                For founders who are looking for a design partner they can trust like a team.
-              </p>
+          {/* Wider & deeper Right pattern */}
+          <div 
+            className="hidden md:block absolute right-0 top-0 bottom-0 w-8 z-10 border-r border-r-zinc-500/30 bg-[repeating-linear-gradient(315deg,#e5e5e5_0,#e5e5e5_1px,transparent_0,transparent_50%)] bg-size-[12px_12px] opacity-15"
+            aria-hidden="true"
+          />
 
-              {/* Price */}
-              <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-4xl font-bold text-white">$6,917</span>
-                <span className="text-zinc-500 text-sm">/ Per Month</span>
+          <div className="relative z-20 px-2 md:px-6">
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+
+            {/* PRICING SECTION */}
+            <div className="pt-12 border-t border-white/5">
+              <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+                {/* Basic Tier */}
+                <div className="rounded-3xl md:rounded-2xl border border-white/10 p-8 flex flex-col">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-2">Basic</h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                      For founders who are looking for a design partner they can trust like a team.
+                    </p>
+
+                    <div className="flex items-baseline gap-2 mb-6">
+                      <span className="text-4xl font-bold text-white">$4,917</span>
+                      <span className="text-zinc-500 text-sm">/ Per Month</span>
+                    </div>
+
+                    <div className="border-t border-dashed border-white/10 mb-6" />
+
+                    <ul className="space-y-4 mb-8 flex-1">
+                      {basicFeatures.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-sm text-zinc-300">
+                          <svg className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <a
+                    href="https://cal.com/uigeek"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-center bg-white text-black hover:bg-zinc-200 px-8 py-4 rounded-xl font-medium transition-colors mt-auto"
+                  >
+                    Start next week
+                  </a>
+                </div>
+
+                {/* Launch Tier - matching left CTA style + inner shadow */}
+                <div className="rounded-3xl md:rounded-2xl border border-emerald-500/40 p-8 flex flex-col relative">
+                  <div className="absolute -top-3 right-6 bg-emerald-600 text-white text-xs font-medium px-3 py-1 rounded-full">
+                    Most Popular
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-2">Launch</h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                      For founders ready to ship with high-impact video assets and faster velocity.
+                    </p>
+
+                    <div className="flex items-baseline gap-2 mb-6">
+                      <span className="text-4xl font-bold text-white">$7,917</span>
+                      <span className="text-zinc-500 text-sm">/ Per Month</span>
+                    </div>
+
+                    <div className="border-t border-dashed border-white/10 mb-6" />
+
+                    <ul className="space-y-4 mb-8 flex-1">
+                      {launchFeatures.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-sm text-zinc-300">
+                          <svg className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <a
+                    href="https://cal.com/uigeek"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-center bg-emerald-600/40 hover:bg-emerald-600/60 text-white border border-zinc-500/20 hover:border-emerald-500/40 px-8 py-4 rounded-2xl font-medium transition-all duration-300 mt-auto shadow-inner hover:shadow-inner"
+                  >
+                    Start next week
+                  </a>
+                </div>
               </div>
-
-              {/* Divider */}
-              <div className="border-t border-dashed border-white/10 mb-6" />
-
-              {/* Features */}
-              <ul className="space-y-4 mb-8">
-                {pricingFeatures.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm text-zinc-300">
-                    <svg
-                      className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA */}
-              <a
-                href="https://cal.com/uigeek"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-white text-black hover:bg-zinc-200 px-8 py-4 rounded-xl font-medium transition-colors"
-              >
-                Start next week
-              </a>
             </div>
           </div>
         </section>
