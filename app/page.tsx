@@ -51,14 +51,14 @@ const projects: Project[] = [
   {
     id: "cura-mental",
     category: "Mental Health App",
-    categoryColor: "text-cyan-400",
-    dotColor: "bg-cyan-400",
+    categoryColor: "text-red-400",
+    dotColor: "bg-red-400",
     title: "Cura Patient Monitoring App",
     description:
       "A comprehensive mental health platform connecting patients with caregivers, tracking vital signs, and providing real-time health insights.",
-    quote: '"Heartfelt congratulations and sincere thanks to both of you. Your exceptional contributions from the very beginning have been vital in successfully bringing Cura to life."',
+    quote: '"Huge kudos to both of you. Incredible work in helping Cura get off the ground since day 1."',
     quoteAuthor: "Wael Kabil, Cura Health inc",
-    quoteBorderColor: "border-cyan-400/30",
+    quoteBorderColor: "border-red-500/30",
     images: [
       "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Cura-health-patient-monitoring-app.jpg",
       "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Cura-health-patient-monitoring-app-blood-pressure-results.jpg",
@@ -134,7 +134,7 @@ const projects: Project[] = [
     dotColor: "bg-blue-400",
     title: "Bizwise: Customer Management SaaS Platform",
     description:
-      "Comprehensive SaaS platform for small businesses to manage customer data, imports, file uploads, group organization, and advanced search with a clean. Bizwise is already revenue-generating with paying customers and has secured venture investment, confirming product-market fit for small business digital tools.",
+      "Comprehensive SaaS platform for small businesses to manage customer data, imports, file uploads, group organization, and advanced search with a clean, data-dense interface.",
     images: [
       "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Bizwise/Saas-software-for-smbs-customers-empty-state%20%281%29.jpg",
       "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Bizwise/Saas-software-for-smbs-search.jpg",
@@ -354,7 +354,6 @@ export default function Home() {
               <a href="https://www.linkedin.com/in/mdmasudur92/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
               <a href="https://dribbble.com/Joy_7480" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">Dribbble</a>
             </div>
-            <p className="text-[10px] text-zinc-600 mt-2">See recent work, client results & behind-the-scenes.</p>
           </div>
         </motion.aside>
 
