@@ -18,22 +18,30 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: "ai-companion",
-    category: "Native iOS App Development Tools",
-    categoryColor: "text-emerald-400",
-    dotColor: "bg-emerald-400",
-    title: "AI Companion For iOS Native App Development",
+    id: "caspy-anxiety",
+    category: "Anxiety Relief App",
+    categoryColor: "text-red-500",
+    dotColor: "bg-red-400",
+    title: "Caspy: Anxiety Attack Relief Mood, Calm with Self Care Cat",
     description:
-      "An intelligent coding assistant designed for iOS developers, featuring natural language prompts, real-time code generation, and seamless Xcode integration.",
+      "A calming iOS app designed to help users manage anxiety attacks with mood tracking, gratitude journaling, self-care reminders, and a comforting cat companion.",
     quote: '"Huge kudos to both of you. Incredible work in helping Alfi get off the ground since day 1."',
     quoteAuthor: "Jacob Hailton, BTCH",
-    quoteBorderColor: "border-emerald-500/30",
+    quoteBorderColor: "border-red-500/30",
     images: [
-      "https://res.cloudinary.com/drbqpdphk/image/upload/v1782802987/Prompt01_fcihbv.png",
-      "https://res.cloudinary.com/drbqpdphk/image/upload/v1782839321/Bitrig_dashboard_design_ttogwe.png",
-      "https://res.cloudinary.com/drbqpdphk/image/upload/v1782803005/Agent_Call_ze2a4y.png",
+      "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Caspy-mental-health-app-gratitude.jpg",
+      "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Caspy-mental-health-app-question.jpg.jpg",
+      "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Caspy-mental-health-app-onboarding.jpg",
+      "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Caspy-mental-health-app-day.jpg",
+      "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Caspy-mental-health-app-journal.jpg",
     ],
-    imageAlts: ["AI Companion", "Dashboard", "Agent Call"],
+    imageAlts: [
+      "Caspy gratitude journal screen",
+      "Caspy anxiety question screen",
+      "Caspy onboarding flow",
+      "Caspy daily mood check-in",
+      "Caspy journal entry screen",
+    ],
   },
   {
     id: "cura-mental",
@@ -47,11 +55,13 @@ const projects: Project[] = [
     quoteAuthor: "Jacob Hailton, Uigeek.ai",
     quoteBorderColor: "border-red-500/30",
     images: [
-      "https://res.cloudinary.com/drbqpdphk/image/upload/v1782807230/04_muyzr4.png",
-      "https://res.cloudinary.com/drbqpdphk/image/upload/v1782807276/02_eyboy9.png",
-      "https://res.cloudinary.com/drbqpdphk/image/upload/v1782807243/03_hbuvnb.png",
+      "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Testing-landing-page03.jpg",
+      "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/M8.digital-landing-page.jpg",
+      "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Testing-landing-page02.jpg",
+      "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Testing-landing-page05.jpg",
+      "https://xxug9xacnrkk5ey7.public.blob.vercel-storage.com/Testing-landing-page04.jpg",
     ],
-    imageAlts: ["Cura App", "Screen 2", "Screen 3"],
+    imageAlts: ["Cura main app interface", "Cura patient dashboard", "Cura vital signs monitoring"],
   },
   {
     id: "cura-vitals",
@@ -72,7 +82,14 @@ const projects: Project[] = [
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782828511/Blood_Pressure_Home_Dark_cmmqsn.png",
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782828506/Blood_Pressure_Dark_irmfpc.png",
     ],
-    imageAlts: ["Vitals", "Metrics", "Temperature", "Temperature Dark", "Blood Pressure Home", "Blood Pressure Dark"],
+    imageAlts: [
+      "Cura vitals overview",
+      "Cura metrics dashboard",
+      "Body temperature monitoring",
+      "Temperature dark mode",
+      "Blood pressure home screen",
+      "Blood pressure dark mode",
+    ],
   },
   {
     id: "diamond-icq",
@@ -90,7 +107,14 @@ const projects: Project[] = [
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782829569/Diamond_ICQ_Diamond_Product_Page_fx1h4r.png",
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782829570/2_rfuwju.png",
     ],
-    imageAlts: ["Navigation", "Jewelry 1", "Product Page", "Responsive", "Diamond Page", "Jewelry 2"],
+    imageAlts: [
+      "Diamond ICQ navigation bar",
+      "Luxury jewelry homepage",
+      "Product detail page",
+      "Responsive design view",
+      "Diamond product showcase",
+      "Jewelry collection grid",
+    ],
   },
   {
     id: "saas-smb",
@@ -110,7 +134,16 @@ const projects: Project[] = [
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782830172/Adding_Group_pd84jx.png",
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782830208/Customer_Files_upload_x0dy3h.png",
     ],
-    imageAlts: ["Table", "Import Dashboard", "Import Done", "Customer Import", "Empty State", "Search", "Adding Group", "File Upload"],
+    imageAlts: [
+      "Customer table view",
+      "Import dashboard",
+      "Import completed screen",
+      "Customer import flow",
+      "Empty state dashboard",
+      "Search functionality",
+      "Adding group feature",
+      "File upload interface",
+    ],
   },
   {
     id: "leafcare",
@@ -130,7 +163,16 @@ const projects: Project[] = [
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782837756/MindFulness_Screen_qvxz4a.png",
       "https://res.cloudinary.com/drbqpdphk/image/upload/v1782837595/Mindfulness_Page_Design_fw95od.png",
     ],
-    imageAlts: ["Landing Page", "Instagram 3", "Leafcare", "Instagram 4", "Sleep Search", "Instagram 7", "Mindfulness Screen", "Mindfulness Page"],
+    imageAlts: [
+      "Leafcare landing page",
+      "Instagram post example 3",
+      "Leafcare main dashboard",
+      "Instagram post example 4",
+      "Sleep tracking screen",
+      "Instagram post example 7",
+      "Mindfulness exercise screen",
+      "Mindfulness page design",
+    ],
   },
 ];
 
@@ -158,22 +200,23 @@ const launchFeatures = [
   "Senior Designers + expanded capacity",
 ];
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, isFirst }: { project: Project; isFirst: boolean }) {
   return (
     <article className="project-card group pb-8">
       <div className="space-y-4 mb-6">
         {project.images.map((src, idx) => (
           <div
             key={idx}
-            className="relative w-full overflow-hidden rounded-3xl md:rounded-2xl sm:rounded-xl border border-white/5 aspect-video"
+            className="relative w-full overflow-hidden rounded-[8px] md:rounded-[16px] lg:rounded-[24px] border border-white/5 aspect-video"
           >
             <Image
               src={src}
-              alt={project.imageAlts[idx]}
+              alt={project.imageAlts[idx] || `${project.title} screenshot ${idx + 1}`}
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 800px"
-              priority={idx === 0 && project.id === "ai-companion"}
+              priority={isFirst && idx === 0}
+              loading={isFirst && idx === 0 ? "eager" : "lazy"}
             />
           </div>
         ))}
@@ -218,12 +261,11 @@ export default function Home() {
             Helping founders ship beautiful, high-converting AI products, fast. Ex-ShopHero & ByteDance designers delivering results with zero contracts. Currently partnering with builders in AI Native iOS App development, AI Health Longevity, AI Texting, and AI Dev.
           </p>
 
-          {/* Smaller CTA */}
           <a
             href="https://cal.com/uigeek"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-3 bg-emerald-600/40 hover:bg-emerald-600/60 text-white border border-zinc-500/20 hover:border-emerald-500/40 px-6 py-3 text-sm rounded-2xl font-medium w-fit transition-all duration-300 mb-4"
+            className="group inline-flex items-center justify-center gap-3 bg-emerald-600/40 hover:bg-emerald-600/60 text-white border border-zinc-500/20 hover:border-emerald-500/40 px-8 py-4 rounded-xl font-medium w-fit transition-all duration-300 mb-4"
           >
             Let&apos;s Talk <span className="text-emerald-500/60">→</span> 1 Spot Available
           </a>
@@ -251,28 +293,27 @@ export default function Home() {
           </div>
         </aside>
 
-        {/* RIGHT SIDE - SCROLLABLE with wider/deeper patterns */}
+        {/* RIGHT SIDE - SCROLLABLE with patterns */}
         <section className="bg-[#0c0c0e] p-6 md:p-8 lg:p-10 xl:p-14 relative">
-          {/* Wider & deeper Left pattern */}
+          {/* Wider & deeper patterns */}
           <div 
             className="hidden md:block absolute left-0 top-0 bottom-0 w-8 z-10 border-l border-l-zinc-500/30 bg-[repeating-linear-gradient(315deg,#e5e5e5_0,#e5e5e5_1px,transparent_0,transparent_50%)] bg-size-[12px_12px] opacity-15"
             aria-hidden="true"
           />
 
-          {/* Wider & deeper Right pattern */}
           <div 
-            className="hidden md:block absolute right-0 top-0 bottom-0 w-8 z-10 border-r border-r-zinc-500/30 bg-[repeating-linear-gradient(315deg,#e5e5e5_0,#e5e5e5_1px,transparent_0,transparent_50%)] bg-size-[12px_12px] opacity-15"
+            className="hidden md:block absolute right-0 top-0 bottom-0 w-8 z-10 border-r border-r-zinc-500/30 bg-[repeating-linear-gradient(315deg,#e5e5e5_0,#e5e5e5_1px,transparent_0,transparent_50%)] bg-size-[12px_12px] opacity-10"
             aria-hidden="true"
           />
 
           <div className="relative z-20 px-2 md:px-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} isFirst={index === 0} />
             ))}
 
             {/* PRICING SECTION */}
             <div className="pt-12 border-t border-white/5">
-              <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+              <div className="flex flex-col gap-6 max-w-4xl lg:grid lg:grid-cols-2 lg:gap-6">
                 {/* Basic Tier */}
                 <div className="rounded-3xl md:rounded-2xl border border-white/10 p-8 flex flex-col">
                   <div>
@@ -310,7 +351,7 @@ export default function Home() {
                   </a>
                 </div>
 
-                {/* Launch Tier - matching left CTA style + inner shadow */}
+                {/* Launch Tier */}
                 <div className="rounded-3xl md:rounded-2xl border border-emerald-500/40 p-8 flex flex-col relative">
                   <div className="absolute -top-3 right-6 bg-emerald-600 text-white text-xs font-medium px-3 py-1 rounded-full">
                     Most Popular
