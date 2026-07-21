@@ -322,7 +322,7 @@ export default function Home() {
             Product design agency from the Internet. We design & build AI-first products for startups & enterprises.
           </h1>
 
-          <p className="text-zinc-500 mb-10 text-base md:text-small leading-relaxed">
+          <p className="text-zinc-300 mb-10 text-base md:text-small leading-relaxed">
             Helping founders ship beautiful, high-converting AI products, fast. Ex-ShopHero & ByteDance designers delivering results with zero contracts. Currently partnering with builders in AI Native iOS App development, AI Health Longevity, AI Texting, and AI Dev.
           </p>
 
@@ -353,9 +353,7 @@ export default function Home() {
               <a href="https://x.com/sr_masudur" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">X</a>
               <a href="https://www.linkedin.com/in/mdmasudur92/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
               <a href="https://dribbble.com/Joy_7480" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">Dribbble</a>
-            </div>
-            <p className="text-[10px] text-zinc-600 mt-2">See recent work, client results & behind-the-scenes.</p>
-          </div>
+            </div>          </div>
         </motion.aside>
 
         {/* Right Scrollable Content */}
