@@ -273,7 +273,7 @@ function ProjectCard({ project, isFirst }: { project: Project; isFirst: boolean 
         {project.category}
       </div>
 
-      <h3 className="text-xl md:text-2xl font-semibold mb-3 font-heading">{project.title}</h3>
+      <h2 className="text-xl md:text-2xl font-semibold mb-3 font-heading">{project.title}</h2>
       <p className="text-zinc-400 leading-relaxed mb-4 max-w-xl">{project.description}</p>
 
       {project.quote && project.quoteAuthor && (
@@ -336,7 +336,7 @@ export default function Home() {
           </a>
 
           <div className="mt-auto pt-8 border-t border-white/5">
-            <p className="text-xs text-white-500 uppercase tracking-widest mb-4">Previously worked with</p>
+            <p className="text-xs text-zinc-500 uppercase tracking-widest mb-4">Previously worked with</p>
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-zinc-400">
               {clients.map((client, idx) => (
                 <span key={client} className="flex items-center gap-2">
@@ -348,12 +348,14 @@ export default function Home() {
           </div>
 
           <div className="pt-6 border-t border-white/5 mt-6">
-            <p className="text-xs text-white-500 uppercase tracking-widest mb-3">Follow our work</p>
+            <p className="text-xs text-zinc-500 uppercase tracking-widest mb-3">Follow our work</p>
             <div className="flex flex-wrap gap-4 text-sm">
               <a href="https://x.com/sr_masudur" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">X</a>
               <a href="https://www.linkedin.com/in/mdmasudur92/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
               <a href="https://dribbble.com/Joy_7480" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">Dribbble</a>
-            </div>          </div>
+            </div>
+            <p className="text-[10px] text-zinc-600 mt-2">See recent work, client results & behind-the-scenes.</p>
+          </div>
         </motion.aside>
 
         {/* Right Scrollable Content */}
