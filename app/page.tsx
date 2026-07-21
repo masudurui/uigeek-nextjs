@@ -248,24 +248,29 @@ function ProjectCard({ project, isFirst }: { project: Project; isFirst: boolean 
       viewport={{ once: true, margin: "-100px" }}
     >
       <div className="space-y-4 mb-6">
-        {project.images.map((src, idx) => (
-          <motion.div
-            key={idx}
-            className="relative w-full overflow-hidden rounded-lg md:rounded-xl lg:rounded-2xl border border-white/5 aspect-video"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.4 }}
-          >
-            <Image
-              src={src}
-              alt={project.imageAlts[idx] || `${project.title} screenshot`}
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 800px"
-              priority={isFirst && idx === 0}
-              loading={isFirst && idx === 0 ? "eager" : "lazy"}
-            />
-          </motion.div>
-        ))}
+        {project.images.map((src, idx) => {
+          const isLCP = isFirst && idx === 0;
+
+          return (
+            <motion.div
+              key={idx}
+              className="relative w-full overflow-hidden rounded-lg md:rounded-xl lg:rounded-2xl border border-white/5 aspect-video"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.4 }}
+            >
+              <Image
+                src={src}
+                alt={project.imageAlts[idx] || `${project.title} screenshot`}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 800px"
+                priority={isLCP}
+                loading={isLCP ? "eager" : "lazy"}
+                quality={isLCP ? 85 : 65}   // Lower quality for non-LCP images
+              />
+            </motion.div>
+          );
+        })}
       </div>
 
       <div className={`flex items-center gap-2 ${project.categoryColor} text-sm font-medium mb-3`}>
@@ -350,7 +355,7 @@ export default function Home() {
           <div className="pt-6 border-t border-white/5 mt-6">
             <p className="text-xs text-white uppercase tracking-widest mb-3">Follow our work</p>
             <div className="flex flex-wrap gap-4 text-sm">
-              <a href="https://x.com/sr_masudur" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">X</a>
+              <a href="https://x.com/sr_masudur" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">X (formally Twitter)</a>
               <a href="https://www.linkedin.com/in/mdmasudur92/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
               <a href="https://dribbble.com/Joy_7480" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">Dribbble</a>
             </div>
@@ -387,7 +392,7 @@ export default function Home() {
               transition={{ delay: 0.4 }}
             >
               <div className="flex flex-col gap-6 max-w-4xl lg:grid lg:grid-cols-2 lg:gap-6">
-                {/* Basic Tier - Dark Emerald */}
+                {/* Basic Tier */}
                 <div className="rounded-3xl md:rounded-2xl border border-emerald-500/40 bg-emerald-950/80 p-8 flex flex-col text-white">
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Basic</h3>
@@ -424,7 +429,7 @@ export default function Home() {
                   </a>
                 </div>
 
-                {/* Launch Tier - White */}
+                {/* Launch Tier */}
                 <div className="rounded-3xl md:rounded-2xl border border-white/10 bg-white p-8 flex flex-col text-black relative">
                   <div className="absolute -top-3 right-6 bg-emerald-600 text-white text-xs font-medium px-3 py-1 rounded-full">
                     Most Popular
