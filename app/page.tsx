@@ -266,7 +266,7 @@ function ProjectCard({ project, isFirst }: { project: Project; isFirst: boolean 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 800px"
                 priority={isLCP}
                 loading={isLCP ? "eager" : "lazy"}
-                quality={isLCP ? 85 : 65}   // Lower quality for non-LCP images
+                quality={isLCP ? 85 : 65}
               />
             </motion.div>
           );
@@ -355,7 +355,7 @@ export default function Home() {
           <div className="pt-6 border-t border-white/5 mt-6">
             <p className="text-xs text-white uppercase tracking-widest mb-3">Follow our work</p>
             <div className="flex flex-wrap gap-4 text-sm">
-              <a href="https://x.com/sr_masudur" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">X (formally Twitter)</a>
+              <a href="https://x.com/sr_masudur" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">X</a>
               <a href="https://www.linkedin.com/in/mdmasudur92/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
               <a href="https://dribbble.com/Joy_7480" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">Dribbble</a>
             </div>
